@@ -1,11 +1,13 @@
-var asd;
+/* <?php */
+$title = "PHP";
+$document->getElementById("title")->innerText = $title;
 
-// Describe this function...
-function do_something() {
-  if (--window.LoopTrap == 0) throw "Infinite loop.";
-  asd = 0;
-}
+$count = 0;
 
-
-if (false) {
-}
+$document
+    ->getElementById("counter-button")
+    ->addEventListener("click", function () use (&$count, $document) {
+        $count += 1;
+        $document->getElementById("counter")->innerText = $count;
+        echo "count: $count";
+    });
